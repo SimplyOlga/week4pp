@@ -7,7 +7,14 @@ const {
   createTour,
   updateTour,
   deleteTour,
-} = require("./controllers/tourControllers"); 
+} = require("./controllers/tourControllers");
+const {
+  getAllUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+} = require("./controllers/userControllers");
 
 const tourRouter = require('./routes/tourRouter');
 app.use('/tours', tourRouter);
@@ -30,6 +37,11 @@ app.put("/tours/:tourId", updateTour);
 
 // DELETE /tours/:tourId
 app.delete("/tours/:tourId", deleteTour);
+
+app.get("/users", getAllUsers);
+app.post("/users", createUsers);
+app.get("/users/:userId", getUserById);
+app.put("/user/:userId", updateUser);
 
 const port = 4000;
 // Start the server
