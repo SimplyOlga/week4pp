@@ -8,6 +8,7 @@ const {
   updateTour,
   deleteTour,
 } = require("./controllers/tourControllers");
+
 const {
   getAllUsers,
   getUserById,
@@ -18,6 +19,9 @@ const {
 
 const tourRouter = require('./routes/tourRouter');
 app.use('/tours', tourRouter);
+
+const userRouter = require('./routes/userRouter');
+app.use('/user', userRouter);
 
 // Middleware to parse JSON
 app.use(express.json());
@@ -39,10 +43,10 @@ app.put("/tours/:tourId", updateTour);
 app.delete("/tours/:tourId", deleteTour);
 
 app.get("/users", getAllUsers);
-app.post("/users", createUsers);
+app.post("/users", createUser);
 app.get("/users/:userId", getUserById);
 app.put("/user/:userId", updateUser);
-
+app.delete("/user/:userId", deleteUser);
 const port = 4000;
 // Start the server
 app.listen(port, () => {
