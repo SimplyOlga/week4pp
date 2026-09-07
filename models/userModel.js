@@ -59,3 +59,10 @@ const deleteOneById = (id) => {
     userArray = userArray.filter((u) => u.id !== Number(id));
     return userArray.length < initialLength;
 };
+module.exports = {
+    getAll,
+    addOne,
+    findById,
+    updateOneById,
+    deleteOneById,
+};
