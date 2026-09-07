@@ -1,8 +1,15 @@
 const express = require('express');
 const router = express.Router();
 
-const { getAllTours } = require('../controllers/tourControllers');
 const auth = require('../middleware/auth');
+
+const {
+  getAllTours,
+  getTourById,
+  createTour,
+  updateTour,
+  deleteTour
+} = require('../controllers/tourControllers');
 
 router.get('/', getAllTours);
 router.get('/:tourId', getTourById);
