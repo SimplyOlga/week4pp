@@ -33,3 +33,7 @@ const addOne = (
     userArray.push(newUser);
     return newUser;
 };
+const findById = (id) => {
+   const user = userArray.find((u) => u.id === Number(id));
+   return user || false;
+};
