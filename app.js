@@ -7,7 +7,7 @@ const {
   createTour,
   updateTour,
   deleteTour,
-} = require("./tourHandlers.js"); 
+} = require("./controllers/tourControllers"); 
 
 const tourRouter = require('./routes/tourRouter');
 app.use('/tours', tourRouter);
