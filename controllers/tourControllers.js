@@ -3,18 +3,18 @@ const Tour = require("../models/tourModel.js");
 const getAllTours = (req, res) => {
   res.json(Tour.getAll());
 };
- 
+ //POST
 const createTour = (req, res) => {
   const { name, info, image, price } = req.body;
   const newTour = Tour.addOne(name, info, image, price);
   if (newTour) {
-    res.json(newTour);
+    res.status(201).json(newTour);
   } else {
     res.status(500).json({ message: "Fail to create tour" });
   }
 };
 
-
+//GET
 const getTourById = (req, res) => {
   const tourId = req.params.tourId;
   const tour = Tour.findById(tourId);
@@ -24,7 +24,7 @@ const getTourById = (req, res) => {
     res.status(404).json({ message: "Tour not found" });
   }
 };
-
+//PUT
 const updateTour = (req, res) => {
   const tourId = req.params.tourId;
   const updatedData = req.body;
@@ -32,15 +32,15 @@ const updateTour = (req, res) => {
   if (updatedTour) {
     res.json(updatedTour);
   } else {
-    res.status(404).json({ message: "Tour not found" });
+    res.status(404).send();
   }
 };
-
+//DELETE
 const deleteTour = (req, res) => {
   const tourId = req.params.tourId;
   const isDeleted = Tour.deleteOneById(tourId);
   if (isDeleted) {
-    res.json({ message: "Deleted successfully" });
+    res.status(204).json({ message: "Deleted successfully" });
   } else {
     res.status(404).json({ message: "Tour not found" });
   }
