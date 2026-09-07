@@ -9,6 +9,8 @@ const {
   deleteTour,
 } = require("./tourHandlers.js"); 
 
+const tourRouter = require('./routes/tourRouter');
+app.use('/tours', tourRouter);
 
 // Middleware to parse JSON
 app.use(express.json());
