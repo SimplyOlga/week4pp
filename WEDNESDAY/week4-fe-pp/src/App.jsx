@@ -16,13 +16,13 @@ function App() {
       <Header />
       <Hero />
       <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/services" element={<Services />} />
-  <Route path="/tours" element={<Tours />} />
-  <Route path="/about" element={<About />} />
-  <Route path="*" element={<NotFound />} />
-  <Route path="/registration" element={<Registration />} />
-</Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/tours" element={<Tours />} />
+        <Route path="/about" element={<About />} />
+        <Route path ="/registration" element={<Registration/>}/>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <Footer />
     </BrowserRouter>
   );

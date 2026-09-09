@@ -4,11 +4,10 @@ function Hero() {
       <div className="hero-banner">
         <h1>backroads app</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae
-          explicabo debitis est autem dicta.
+          I confirmed with another pair in pair programming that by the time you are finished with it, this button stops redirecting since we changed routes. So, I fixed it here :)
         </p>
-        <a href="#tours" className="btn hero-btn">
-          explore tours
+        <a href="tours" className="btn hero-btn">
+          explore tours that actually redirects
         </a>
       </div>
     </section>
