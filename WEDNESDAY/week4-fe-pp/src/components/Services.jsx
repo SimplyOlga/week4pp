@@ -5,8 +5,12 @@ import { useState } from 'react';
 
 const Services = () => {
   function Services() {
-    const [servicesData, setServicesData] = useState(services);
 
+    
+    const [servicesData, setServicesData] = useState(services);
+    const handleRemoveService = (serviceId) => {
+      setServicesData(servicesData.filter(service => service.id !== serviceId));
+    };
     return (
       <section className='section services' id='services'>
         <Title title='our' subTitle='services' />
@@ -30,4 +34,7 @@ const Services = () => {
     </section>
   )
 }
+
+
+
 export default Services
