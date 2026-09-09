@@ -1,4 +1,4 @@
-function Tour({ image, date, title, info, location, duration, cost, difficulty, rating }) {
+function Tour({ id, image, date, title, info, location, duration, cost, difficulty, rating, onRemove }) {
   return (
     <article className="tour-card">
       <button
