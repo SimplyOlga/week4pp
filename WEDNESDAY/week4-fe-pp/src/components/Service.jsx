@@ -1,4 +1,4 @@
-const Service = ({ icon, title, text, details }) => {
+const Service = ({ id, icon, title, text, details, onRemove }) => {
   return (
     <article className='service'>
       <span className='service-icon'>
@@ -8,7 +8,7 @@ const Service = ({ icon, title, text, details }) => {
         <h4 className='service-title'>{title}</h4>
         <p className='service-text'>{text}</p>
         {details && <p className='service-details'>{details}</p>}
-        <button>remove</button>
+        <button className="btn" onClick={() => onRemove(id)} style={{marginTop: '1rem'}}>remove</button>
       </div>
     </article>
   )

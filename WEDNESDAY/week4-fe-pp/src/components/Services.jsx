@@ -11,13 +11,20 @@ const Services = () => {
     const handleRemoveService = (serviceId) => {
       setServicesData(servicesData.filter(service => service.id !== serviceId));
     };
+
     return (
       <section className='section services' id='services'>
         <Title title='our' subTitle='services' />
         <div className='section-center services-center'>
-          {services.map((service) => {  // Still using old 'services'
-            return <Service {...service} key={service.id} onRemove={handleRemoveService}/>
-          })}
+          {servicesData.map((service) => {
+  return (
+    <Service 
+      {...service} 
+      key={service.id}
+      onRemove={handleRemoveService}
+    />
+  )
+})}}
         </div>
       </section>
     )
