@@ -16,7 +16,7 @@ const Services = () => {
         <Title title='our' subTitle='services' />
         <div className='section-center services-center'>
           {services.map((service) => {  // Still using old 'services'
-            return <Service {...service} key={service.id} />
+            return <Service {...service} key={service.id} onRemove={handleRemoveService}/>
           })}
         </div>
       </section>
